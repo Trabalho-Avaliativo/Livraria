@@ -1,7 +1,10 @@
+using Trabalho_Avaliativo.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<ILoginRepositorio, LoginRepositorio>();
 
 var app = builder.Build();
 
