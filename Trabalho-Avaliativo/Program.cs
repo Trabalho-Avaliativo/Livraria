@@ -1,4 +1,4 @@
-
+using Livraria.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Trabalho_Avaliativo.Repositories;
 
@@ -6,7 +6,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+// Registros dos Repositórios (Login e Livro)
 builder.Services.AddScoped<ILoginRepositorio, LoginRepositorio>();
+builder.Services.AddScoped<ILivroRepositorio, LivroRepositorio>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
